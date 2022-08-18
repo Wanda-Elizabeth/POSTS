@@ -10,11 +10,6 @@ package ork.liesa.post_comments
     var name:String,
     var email:String,
     var body: String)
-fun <T> compareIds(item1:T,item2:T):T{
-    var output=(item1.toString()+item2.toString())
-    println(output)
-    return item1
-}
 
 //fun  compareIds(post1: Posts, post2:Posts):Posts{
 //    if (post1.id >post2.id){

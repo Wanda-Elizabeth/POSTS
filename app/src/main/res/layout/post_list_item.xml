@@ -19,14 +19,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="163dp">
+        android:layout_height="172dp">
 
         <TextView
             android:id="@+id/tvUserId"
             android:layout_width="222dp"
             android:layout_height="26dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-black"
             android:text="User"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.157"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +39,9 @@
             android:layout_width="221dp"
             android:layout_height="28dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-black"
             android:text="ID"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.164"
             app:layout_constraintStart_toStartOf="parent"

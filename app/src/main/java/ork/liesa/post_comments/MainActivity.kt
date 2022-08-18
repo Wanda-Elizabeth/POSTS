@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getPost()
+
     }
+
 
     fun getPost(){
         var retrofit = ApiClient.buildApiClient(ApiInterface::class.java)
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful){
                     var post = response.body()
                     Toast.makeText(baseContext,"fetched ${post!!.size} posts",Toast.LENGTH_LONG).show()
-                    var adapter = PostRvAdapter(baseContext,post)
+                    var adapter = PostRvAdapter(post)
                     Log.d("Tag",post.toString())
                     binding.rvPost.adapter  = adapter
                     binding.rvPost.layoutManager=LinearLayoutManager(baseContext)
@@ -44,5 +46,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    fun displayPosts(postList: List<Posts>){
+        binding.rvPost.layoutManager = LinearLayoutManager(this)
+        val postRvAdapter = PostRvAdapter(postList)
+        binding.rvPost.adapter = postRvAdapter
     }
 }
